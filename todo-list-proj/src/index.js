@@ -39,8 +39,7 @@ request.onload = function () {
       })
       item.appendChild(editButton)
 
-// test
-// test2
+
       const button = document.createElement('button')
       button.innerText = 'Delete To-Do?'
       button.id = 'mainButton'
@@ -62,16 +61,3 @@ request.onload = function () {
 }
 
 request.send()
-
-
-// let testt = {
-//     "title": "test this out again again",
-//     "completed": false
-// }
-// let miny = JSON.stringify(testt);
-
-// fetch('http://localhost:3000/todos', { 
-//   method: 'POST', 
-//   body: miny })
-// .then(results => results.json())
-// .then(console.log)
