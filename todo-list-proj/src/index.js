@@ -27,15 +27,31 @@ request.onload = function () {
       item.appendChild(h1)
       item.appendChild(p)
 
+const someData = {
+  // title: document.querySelector(todos.title).value
+  title: "edited",
+  completed: true
+}
+
+
       const editButton = document.createElement('button')
       editButton.innerText = 'Edit Task'
       editButton.id = 'editTaskButton'
       editButton.addEventListener('click', () => {
         let url = `http://localhost:3000/todos/${todos.id}`
         let options = {
-          method: "PATCH"
+          method: "PUT",
+          title: JSON.stringify(someData)
         }
-
+      fetch(`http://localhost:3000/todos/${todos.id}`, {
+      method: `PATCH`,
+      body: JSON.stringify({
+        title: "edited 223",
+        completed: false
+      }),
+      headers: { 'Content-type': `application/json; charset=UTF-8` },
+    }).then((response) => response.json())
+    window.location.reload();
       })
       item.appendChild(editButton)
 
