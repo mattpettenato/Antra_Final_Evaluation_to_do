@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../src/styles/style.css" />
+  <title>To-Do List</title>
+</head>
+<body>
+  <div class="todo-list-main">
+    <header class="todo-header">
+      <h1>To-Do List</h1>
+    </header>
+
+    <form action="http://localhost:3000/todos" method="POST" id="new-task-form">
+      <input type="text" name="title" placeholder="What task do you have?">
+      <input type="checkbox" name="completed" id="checkbox1" value="false">not completed
+      <input type="checkbox" name="completed" id="checkbox1" value="true">completed
+      <input type="submit" id="new-task-submit" value="Submit">
+    </form>
+
+  </div>
+  <div id="root"></div>
+  <script src="../src/index.js"></script>
+</body>
+</html>
