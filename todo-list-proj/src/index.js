@@ -8,7 +8,6 @@ form.addEventListener('submit', (e) => {
   const prePayload = new FormData(form);
   const payload = new URLSearchParams(prePayload)
 
-  // console.log([...payload])
 
   fetch('http://localhost:3000/todos', {
     method: 'POST',
@@ -84,10 +83,8 @@ request.onload = function () {
           const prePayload = new FormData(editForm);
           const payload = new URLSearchParams(prePayload)
 
-          // console.log([...payload])
-
           fetch('http://localhost:3000/todos/' + todos.id, {
-            method: 'PATCH',
+            method: 'PUT',
             body: payload
           })
             .then(res => res.json())
@@ -97,19 +94,6 @@ request.onload = function () {
         })
       })
     
-
-      // const editButton = document.createElement('button')
-      // editButton.innerText = 'Edit'
-      // editButton.id = 'mainButton'
-      //   editButton.addEventListener('click', () => {
-      //   let url = `http://localhost:3000/todos/${todos.id}`
-      //   let options = {
-      //     method: "PATCH"
-      //   }
-      //   fetch(url, options)
-      //   .then(response => console.log(response.status))
-      //   window.location.reload();
-      // })
       item.appendChild(editButton)
 
 
