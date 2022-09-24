@@ -41,6 +41,7 @@ request.onload = function () {
 
       const h1 = document.createElement('h1')
       h1.textContent = todos.title
+      console.log(todos)
 
       const p = document.createElement('p')
       if (todos.completed === true) {
@@ -48,11 +49,15 @@ request.onload = function () {
       } else {
         p.textContent = 'Not Completed'
       }
-
-      container.appendChild(item)
+      
       item.appendChild(h1)
-      item.appendChild(p)
+      // item.appendChild(p)
+      // const newDiv = document.createElement('div')
+      // container.appendChild(newDiv)
+      container.appendChild(item)
 
+
+      
       const editButton = document.createElement('button')
       editButton.textContent = 'Edit'
       editButton.id= 'editButton'
@@ -61,18 +66,18 @@ request.onload = function () {
         editForm.id = 'editForm'
         editForm.method = 'PUT'
         editForm.action = 'http://localhost:3000/todos/' + todos.id
-
+        
         const editInput = document.createElement('input')
         editInput.id = 'editInput'
         editInput.name = 'title'
         editInput.type = 'text'
         editInput.value = todos.title
-
+        
         const editSubmit = document.createElement('input')
         editSubmit.id = 'editSubmit'
         editSubmit.type = 'submit'
         editSubmit.value = 'Submit'
-
+        
         editForm.appendChild(editInput)
         editForm.appendChild(editSubmit)
         item.appendChild(editForm)
@@ -93,9 +98,11 @@ request.onload = function () {
             window.location.reload();
         })
       })
-    
+      const newDiv = document.createElement('div')
+      newDiv.className = 'newDiv'
+      item.appendChild(newDiv)
       item.appendChild(editButton)
-
+      
 
       const button = document.createElement('button')
       button.innerText = 'Delete'

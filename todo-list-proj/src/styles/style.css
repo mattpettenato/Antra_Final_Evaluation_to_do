@@ -14,3 +14,80 @@ body {
 html {
   font-size: 65%;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.item{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container{
+  width: 60vh;
+  
+}
+
+.item h1{
+  width: 125vh;
+}
+
+.item{
+  background-color: #FAEACB;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.newDiv{
+  width: 40vh;
+  height: 5vh;
+  /* background-color: aqua; */
+}
+
+body{
+  background-color: #FCFCFC;
+}
+
+#editForm{
+    position: absolute;
+    width: 58vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+
+#editForm submit{
+  width: 20vh;
+}
+
+
+#editForm input{
+  
+  background-color: #FAEACB;
+  border: 0.75px solid #9CC0E7;
+
+  width: 20vh;
+  height: 5vh;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+      font-size: 2em;
+    font-weight: bold;
+}
+
+#editForm input:hover{
+  border: 0.75px solid #9CC0E7;
+}
