@@ -1,6 +1,5 @@
 const form = document.getElementById('form');
-const input = document.getElementById('input');
-// const addTodo = document.getElementById('add-todo');
+const input = document.getElementById('input');;
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -52,11 +51,7 @@ request.onload = function () {
       
       item.appendChild(h1)
       // item.appendChild(p)
-      // const newDiv = document.createElement('div')
-      // container.appendChild(newDiv)
       container.appendChild(item)
-
-
       
       const editButton = document.createElement('button')
       editButton.textContent = 'Edit'
@@ -98,9 +93,38 @@ request.onload = function () {
             window.location.reload();
         })
       })
+
+      const isCompleted = document.createElement('button')
+      isCompleted.id = (todos.completed ? 'isCompleted' : 'isNotCompleted')
+      isCompleted.name = 'completed'
+      isCompleted.innerText = todos.completed ? 'Not Completed' : 'Completed'
+      isCompleted.type = 'button'
+      isCompleted.checked = todos.completed
+      isCompleted.addEventListener('click', () => {
+        fetch('http://localhost:3000/todos/' + todos.id, {
+          method: 'PUT',
+          body: JSON.stringify({
+            title: todos.title,
+            id: todos.id,
+            completed: !todos.completed
+          }),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+          }
+        })
+          .then(res => res.json())
+          .then(data => console.log(data))
+          .catch(err => console.log(err))
+          window.location.reload();
+      })
+
+      item.appendChild(isCompleted)
+
+
+
       const newDiv = document.createElement('div')
       newDiv.className = 'newDiv'
-      item.appendChild(newDiv)
+      // item.appendChild(newDiv)
       item.appendChild(editButton)
       
 

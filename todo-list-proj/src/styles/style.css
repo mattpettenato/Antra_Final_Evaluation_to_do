@@ -51,7 +51,6 @@ html {
 .newDiv{
   width: 40vh;
   height: 5vh;
-  /* background-color: aqua; */
 }
 
 body{
@@ -75,19 +74,39 @@ body{
 
 
 #editForm input{
-  
   background-color: #FAEACB;
   border: 0.75px solid #9CC0E7;
-
   width: 20vh;
   height: 5vh;
   border-radius: 10px;
   border: none;
   padding: 10px;
-      font-size: 2em;
-    font-weight: bold;
+  font-size: 2em;
+  font-weight: bold;
+  outline: none;
 }
 
 #editForm input:hover{
   border: 0.75px solid #9CC0E7;
 }
+
+#isCompleted{
+  /* margin: 10px; */
+  background-color: #E1A080;
+}
+
+#isNotCompleted{
+  background-color: #6D9384;
+  /* margin: 10px; */
+}
+
+.item button{
+  width: 15vh;
+  height: 5vh;
+  border-radius: 10px;
+  background-color: #9CC0E7;
+  outline: none;
+  border-color: transparent;
+  margin-right: 5px;
+}
+
